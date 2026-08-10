@@ -32,12 +32,12 @@ orientation = portrait
 android.permissions = INTERNET
 
 # (int) Target Android API
-android.api = 33
+android.api = 34
 
 # (int) Minimum API your APK will support
 android.minapi = 21
 
-# (int) Android NDK version (r28 ve üzeri hataları önlemek için sabitlendi)
+# (int) Android NDK version
 android.ndk = 25b
 
 # (bool) Use --private data storage
