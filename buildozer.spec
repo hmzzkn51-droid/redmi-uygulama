@@ -18,8 +18,8 @@ source.include_exts = py,png,jpg,kv,atlas,json
 # (str) Application versioning
 version = 1.0
 
-# (list) Application requirements (KivyMD eklendi)
-requirements = python3,kivy,kivymd,requests,certifi,pip
+# (list) Application requirements
+requirements = python3,kivy,requests,certifi
 
 # (list) Supported orientations
 orientation = portrait
@@ -32,7 +32,7 @@ orientation = portrait
 android.permissions = INTERNET
 
 # (int) Target Android API
-android.api = 34
+android.api = 33
 
 # (int) Minimum API your APK will support
 android.minapi = 21
@@ -40,7 +40,7 @@ android.minapi = 21
 # (int) Android NDK version
 android.ndk = 25b
 
-# (bool) Automatically accept Android SDK licenses (Hatanın sebebi olan lisans onayını çözer)
+# (bool) Automatically accept Android SDK licenses
 android.accept_sdk_license = True
 
 # (bool) Use --private data storage
