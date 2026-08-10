@@ -1,43 +1,16 @@
 [app]
 
-# (str) Uygulamanın adı
-title = RedmiUygulama
+# (str) Title of your application
+title = Redmi Uygulama
 
-# (str) Paket adı
+# (str) Package name
 package.name = redmiuygulama
 
-# (str) Paket domain adı
-package.domain = org.redmi
+# (str) Package domain (needed for android packaging)
+package.domain = org.tez
 
-# Kaynak kodlarının bulunduğu dizin
-source.dir = .
+# (str) Source files to include (let it empty to include all files)
+source.include_exts = py,png,jpg,kv,atlas
 
-# (list) Hariç tutulacak dosyalar
-source.exclude_exts = spec
-
-# (list) Uygulama gereksinimleri
-requirements = python3,kivy
-
-# (str) Ekran yönelimi
-orientation = portrait
-
-#
-# Android Özellikleri
-#
-
-# (list) İzinler
-android.permissions = INTERNET
-
-# (int) Hedef Android API sürümü
-android.api = 33
-
-# (int) Desteklenen minimum Android API sürümü
-android.min_api = 21
-
-[buildozer]
-
-# (int) Log seviyesi (0 = hata yok, 2 = tüm loglar)
-log_level = 2
-
-# (int) Depolama alanı uyarı modu
-warn_on_root = 1
+# (str) Application versioning
+version = 0.1
