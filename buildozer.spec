@@ -9,6 +9,9 @@ package.name = aimasterassistant
 # (str) Package domain (needed for android packaging)
 package.domain = org.ai
 
+# (str) Source directory where the main.py file is located
+source.dir = .
+
 # (list) Source files to include (let it blank to include all files)
 source.include_exts = py,png,jpg,kv,atlas,json,db
 
@@ -19,7 +22,6 @@ source.include_patterns = assets/*,images/*.png
 version = 1.0
 
 # (list) Application requirements
-# Asla python kodu içermez, sadece paket adları virgülle ayrılır:
 requirements = python3,kivy,requests,certifi,urllib3,idna,charset_normalizer
 
 # (str) Supported orientations (landscape, portrait or all)
