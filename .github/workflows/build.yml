@@ -1,43 +1,38 @@
-[app]
+name: Build APK
 
-# (str) Uygulamanın adı
-title = RedmiUygulama
+on:
+  push:
+    branches: [ main ]
 
-# (str) Paket adı
-package.name = redmiuygulama
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
-# (str) Paket domain adı
-package.domain = org.redmi
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-# Kaynak kodlarının bulunduğu dizin
-source.dir = .
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev cmake libffi-dev libssl-dev lld
 
-# (list) Hariç tutulacak dosyalar
-source.exclude_exts = spec
+      - name: Install Buildozer and Cython
+        run: |
+          pip install --upgrade pip
+          pip install --user cython==0.29.36 buildozer
 
-# (list) Uygulama gereksinimleri
-requirements = python3,kivy
+      - name: Add local bin to PATH
+        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
 
-# (str) Ekran yönelimi
-orientation = portrait
+      - name: Build with Buildozer
+        run: buildozer -v android debug
 
-#
-# Android Özellikleri
-#
-
-# (list) İzinler
-android.permissions = INTERNET
-
-# (int) Hedef Android API sürümü
-android.api = 33
-
-# (int) Desteklenen minimum Android API sürümü
-android.min_api = 21
-
-[buildozer]
-
-# (int) Log seviyesi (0 = hata yok, 2 = tüm loglar)
-log_level = 2
-
-# (int) Depolama alanı uyarı modu
-warn_on_root = 1
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: bin/*.apk
