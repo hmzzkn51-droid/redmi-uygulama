@@ -18,8 +18,8 @@ source.include_exts = py,png,jpg,kv,atlas,json
 # (str) Application versioning
 version = 1.0
 
-# (list) Application requirements
-requirements = python3,kivy,requests,certifi,pip
+# (list) Application requirements (KivyMD eklendi)
+requirements = python3,kivy,kivymd,requests,certifi,pip
 
 # (list) Supported orientations
 orientation = portrait
@@ -39,6 +39,9 @@ android.minapi = 21
 
 # (int) Android NDK version
 android.ndk = 25b
+
+# (bool) Automatically accept Android SDK licenses (Hatanın sebebi olan lisans onayını çözer)
+android.accept_sdk_license = True
 
 # (bool) Use --private data storage
 android.private_storage = True
