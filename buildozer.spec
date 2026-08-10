@@ -9,6 +9,9 @@ package.name = aiassistant
 # (str) Package domain (needed for android packaging)
 package.domain = org.app
 
+# (str) Source directory where the application files are located
+source.dir = .
+
 # (list) Source files to include
 source.include_exts = py,png,jpg,kv,atlas,json
 
@@ -17,12 +20,6 @@ version = 1.0
 
 # (list) Application requirements
 requirements = python3,kivy,requests,certifi,pip
-
-# (str) Presplash of the application
-#presplash.filename = %(source.dir)s/data/presplash.png
-
-# (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
 
 # (list) Supported orientations
 orientation = portrait
